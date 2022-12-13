@@ -31,7 +31,7 @@ as a problem loan. These findings are not surprising, as these metrics are commo
 
 ![feature_importance](./images/feature_importance.png)
 
-Interestingly, the model also identifies several sellers of loans that are important in determining the classification of a loan as problematic, such as Flagstar Bank and Better Mortgage. In addition, it also identifies a number of states that are important determinants--some of these states are the most populated (such as New York and California), but the results also highlight less populated states such as Louisiana, New Mexico, and Oklahoma.
+Interestingly, the model also identifies several sellers of loans that are important in determining the classification of a loan as problematic, such as Flagstar Bank, Better Mortgage, and Rocket Mortgage. In addition, it also identifies a number of states that are important determinants--some of these states are the most populated (such as New York and California), but the results also highlight less populated states such as Louisiana, New Mexico, and Oklahoma.
 
 ## Recommendations
 Based on results of the best performing model--the XGBoost model--the findings can be used to adjust the criteria Fannie Mae applies to the loans they acquire and guarantee, as well as to focus its credit risk management resources, including analysis and loan resolution, on loans that are likely to be problem loans. Problem loans have, on average:
@@ -43,8 +43,7 @@ Based on results of the best performing model--the XGBoost model--the findings c
 
 By location, mortgage loans in the states of Louisiana, New Mexico, and Oklahoma in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states. Delaware, Hawaii, and Rhode Island also have feature importance, in this case in support of performing (non-problem) loans.
 
-By seller, the performance of mortgage loans sold by Flagstar Bank and Better Mortgage should be examined more closely for problem loans compared to other identified sellers. Movement Mortgage, Quicken Loans, Rocket Mortgage,
-Cardinal Financial and 'other' sellers are also significant, in this case increasing the likelihood of performing (non-problem) loans.
+By seller, the performance of mortgage loans sold by Flagstar Bank, Better Mortgage, and Rocket Mortgage should be examined more closely for problem loans compared to other identified sellers. Movement Mortgage, Quicken Loans, Cardinal Financial and 'other' sellers are also significant, in this case increasing the likelihood of performing (non-problem) loans.
 ![classification_by_seller](./images/classification_by_seller_stacked.png)
 
 ## Next Steps
