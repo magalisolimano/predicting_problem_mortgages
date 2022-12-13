@@ -25,7 +25,7 @@ The analysis utilizes descriptive data analysis and descriptive statistics, in a
 ## Results
 ![cm_auc](./images/cm_auc.png)
 
-After fitting a number of different models, the XG Boost model is selected as best model, with f1 score of 84% and ROC_AUC score of 90.5% for the test set. The model has a true positive rate of 79%, meaning that 79% of predicted problem loans are indeed problematic. The false positive rate is 21%.
+After fitting a number of different models, the XGBoost model is selected as best model, with f1 score of 84% and ROC_AUC score of 90.5% for the test set. The model has a true positive rate of 79%, meaning that 79% of predicted problem loans are indeed problematic. The false positive rate is 21%.
 
 The model identifies combined loan-to-value ratio, borrower credit score, number of borrowers, number of units, and debt-to-income ratio as the top five most important features determining whether a loan is classified
 as a problem loan. These findings are not surprising, as these metrics are commonly used in credit risk assessments.
@@ -38,12 +38,14 @@ Interestingly, the model also identifies several sellers of loans that are impor
 Based on results of the best performing model--the XGBoost model--Fannie Mae should focus credit risk management resources, including analysis and loan resolution, on loans that are likely to be problem loans,
 which have on average:
 
-- combined loan-to-value ratio of 79% (compared to 67%)
+- combined loan-to-value ratio of 79% (compared to 67% for performing loans)
 - borrower credit score of 725 (compared to 766 for performing loans)
-- debt-to-income ratios of 38% (compared to 32%)
+- debt-to-income ratios of 38% (compared to 32% for performing loans)
 ![classification_by_feature](./images/classification_by_feature.png)
 
-By location, mortgage loans in the states of Louisiana, New Mexico, and Oklahoma in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states. Delaware, Hawaii, and Rhode Island also have feature importance, in this case more likely in support of performing (non-problem) loans.
+Fannie Mae can also use these findings to adjust the criteria it applies to the loans they acquire and guarantee.
+
+By location, mortgage loans in the states of Louisiana, New Mexico, and Oklahoma in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states. Delaware, Hawaii, and Rhode Island also have feature importance, in this case in support of performing (non-problem) loans.
 
 By seller, the performance of mortgage loans sold by Flagstar Bank and Better Mortgage should be examined more closely for problem loans compared to other identified sellers. Movement Mortgage, Quicken Loans, Rocket Mortgage,
 Cardinal Financial and 'other' sellers are also significant, in this case increasing the likelihood of performing (non-problem) loans.
