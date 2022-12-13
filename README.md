@@ -1,54 +1,61 @@
-# Phase 4 Project: Time Series Forecasting
+# Predicting Problem Mortgage Loans
 
 Author: Magali Solimano
 
-Date: October 2022
+Date: December 2022
 
 ## Project Overview
 
-The Phase 4 Project applies time series modeling to forecast housing prices.
+This analysis applies machine learning to predict the likelihood that a borrower will have problems paying its mortgage loan.
 
 ## Objectives
 
-First-time homeowners are looking to invest in residential real estate with the goal of maximizing returns
-over a 5y period. The buyers would like to identify the top 5 best zip codes to invest in. 
-
-This analysis will focus on zipcodes with below-median sales price and annual ROI (over previous 5 years)
-in the 90th percentile in the state of Florida, which exploratory data analysis shows has a high percentage
-of zipcodes that meet this criteria.
+The goal is to identify problem loans and the features that determine them in order to manage credit risk. While mortgage loan delinquencies are currently [very low](https://www.newyorkfed.org/microeconomics/hhdc), the value-added use case of
+the machine learning model would strengthen credit risk management in the current environment as well as during stress periods.
 
 ![state_price_roi_rankings](./images/state_price_roi_barplots.png)
 
 ## The Data
 
-The project uses [Zillow Research data](https://www.zillow.com/research/data/), which can be found in  `zillow_data.csv` in the data folder in this repo. The description of the column names can be found in the repo's Jupyter Notebook. The dataset has nearly 15,000 zipcodes and 300 variables, of which more than 270 are monthly time series data.
+Data is obtained from [Fannie Mae's Single Family Loan Data](https://capitalmarkets.fanniemae.com/credit-risk-transfer/single-family-credit-risk-transfer/fannie-mae-single-family-loan-performance-data), which is publically available and provides a subset of acquisition and performance data through Q2 2022 as of December 2022. This notebook focuses on loans acquired by Fannie Mae in Q1 2021, a quarter of high activity in the single family residential market, and tracks 15 months of performance.
+
+Problem loans are defined as loans with payments that are 90 or more days past due; loans that have been modified, restructured, or received any borrower assistance; and loans that have been foreclosed. A binary variable, problem loans are classified as '1' and performing, non-problem loans as '0'.
 
 ## Methods
-The analysis utilizes descriptive data analysis and descriptive statistics, in addition to time series modeling. Based on the selection criteria, ten Florida zipcodes were identified as candidates for modelling.
+The analysis utilizes descriptive data analysis and descriptive statistics, in addition to machine learning modelling.
 
 ## Results
 
-![stpete_model_output](./images/stpete_model_output.png)
+![feature_importance](./images/feature_importance.png)
 
-After preparing and examining the data, the baseline SARIMAX model was run and fit on all ten zipcodes. Subsequent model iterations were based on identified best parameters, which resulted in improved model performance for eight of ten zipcodes. Training data performed better than the testing data, which was comprised of the last 12 months of data, meaning that the models may be overfitting and may not do well with new data. The forecasts have wide confidence intervals, indicating that there is uncertainty regarding the results.
+After fitting a number of different models, the XG Boost model is selected as best model, with f1 score of 84% and ROC_AUC score of 90.5% for the test set.
 
-![stpete_forecast](./images/stpete_forecast.png)
+The model identifies combined loan-to-value ratio, borrower credit score, number of borrowers, number of units, and debt-to-income ratio as the top five most important features determining whether a loan is classified
+as a problem loan. These findings are not surprising, as these metrics are commonly used in credit risk assessments.
+
+Interestingly, the model also identifies several sellers of loans that are important in determining the classification of a loan as problematic (such as Flagstar Bank and Better Mortgage). In addition, it also identifies a number of states that are important determinants--some of these states are the most populated (such as New York and California), but the results also highlight less populated states such as Louisiana, New Mexico, and Oklahoma.
+
+![classification_by_feature](./images/classification_by_feature.png)
+![classification_by_seller](./images/classification_by_seller.png)
 
 ## Recommendations
-Four zipcodes in Pompano Beach (Miami-Ft.Lauderdale metro area), Bradenton (North Port-Sarasota-Bradenton), St. Peterburg (Tampa metro area), and Egypt Lake Leto (Tampa metro area) are recommended 5-year investments. These zipcodes have sales prices
-below the state median of $226k, and forecasted average annual returns in the 15%-25% range.
+Based on results of the best performing model--the XGBoost model--Fannie Mae should focus credit risk management resources, including analysis and loan resolution, on loans that are likely to be problem loans,
+which have on average:
 
-Pierson (Daytona Beach metro area) and Orlando zipcodes are not recommended investments--the models forecast lower returns 
-and a higher model error compared to the other zipcodes.
+- combined loan-to-value ratio of 79% (compared to 67%)
+- borrower credit score of 725 (compared to 766 for performing loans)
+- debt-to-income ratios of 38% (compared to 32%)
 
-![forecasted_returns](./images/forecasted_annual_returns.png)
+By location, mortgage loans in the states of Louisiana, New Mexico, and Oklahoma in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states. Delaware, Hawaii, and Rhode Island also have feature importance, in this case more likely in support of performing (non-problem) loans.
+
+By seller, the performance of mortgage loans sold by Flagstar Bank and Better Mortgage should be examined more closely for problem loans compared to other identified sellers. Movement Mortgage, Quicken Loans, Rocket Mortgage,
+Cardinal Financial and 'other' sellers are also significant, in this case increasing the likelihood of performing (non-problem) loans.
 
 ## Next Steps
-Since forecasts are based only on historical returns, model improvements should take into account other external factors (such as mortgage rates and economic indicators) and evaluate model performance to improve forecast quality. Furthermore, this analysis intentionally focused on the full historical dataset and did not focus exclusively on the post-housing crisis period;
-further model iterations could explore results using data from 2011 onwards. 
+Next steps include continuing to improve model performance, as well as broadening the geographical assessment of problem loans by zipcode and predicting the value of losses for problem loans.
 
 ## More Information
-See the full analysis in the [Jupyter Notebook](https://github.com/magalisolimano/time-series/blob/main/notebook.ipynb) or review the [presentation](https://github.com/magalisolimano/time-series/blob/main/presentation_phase4.pdf). For additional information, contact Magali Solimano at magali.solimano@gmail.com.
+See the full analysis in the [Jupyter Notebook](https://github.com/magalisolimano/predicting_problem_mortgages/blob/master/notebook.ipynb) or review the [presentation](https://github.com/magalisolimano/time-series/blob/main/presentation_phase4.pdf). For additional information, contact Magali Solimano at magali.solimano@gmail.com.
 
 
 ## Repository Structure
