@@ -41,13 +41,13 @@ which have on average:
 - combined loan-to-value ratio of 79% (compared to 67%)
 - borrower credit score of 725 (compared to 766 for performing loans)
 - debt-to-income ratios of 38% (compared to 32%)
+![classification_by_feature](./images/classification_by_feature.png)
 
 By location, mortgage loans in the states of Louisiana, New Mexico, and Oklahoma in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states. Delaware, Hawaii, and Rhode Island also have feature importance, in this case more likely in support of performing (non-problem) loans.
-![classification_by_feature](./images/classification_by_feature.png)
 
 By seller, the performance of mortgage loans sold by Flagstar Bank and Better Mortgage should be examined more closely for problem loans compared to other identified sellers. Movement Mortgage, Quicken Loans, Rocket Mortgage,
 Cardinal Financial and 'other' sellers are also significant, in this case increasing the likelihood of performing (non-problem) loans.
-![classification_by_seller](./images/classification_by_seller.png)
+![classification_by_seller](./images/classification_by_seller_stacked.png)
 
 ## Next Steps
 Next steps include continuing to improve model performance, as well as broadening the geographical assessment of problem loans by zipcode and predicting the value of losses for problem loans.
