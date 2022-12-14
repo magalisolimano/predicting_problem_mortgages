@@ -10,7 +10,7 @@ This analysis applies machine learning to predict the likelihood that a borrower
 
 ## Objectives
 
-The goal is to identify problem loans and the features that determine them in order to manage credit risk. While mortgage loan delinquencies are currently [very low](https://www.newyorkfed.org/microeconomics/hhdc), the value-added use case of the machine learning model would strengthen credit risk management in the current environment as well as during stress periods.
+The goal is to identify problem loans and the features that determine them in order to manage credit risk. While mortgage loan delinquencies are currently [very low](file:///Users/Magali/flatiron-dsc/projects/predicting_problem_mortgages/HHDC_2022Q3.pdf), there are signs of potential increasing stress as measured by share of loans that are 30-60 days late but not yet considered 90+ days delinquent. The value-added use case for applying machine learning is to strengthen credit risk management in the current environment as well as during stress periods.
 
 ## The Data
 
@@ -50,13 +50,13 @@ By seller, the performance of mortgage loans sold by Flagstar Bank, Better Mortg
 Next steps include continuing to improve model performance, as well as broadening the geographical assessment of problem loans by zipcode and predicting the value of losses for problem loans.
 
 ## More Information
-See the full analysis in the [Jupyter Notebook](https://github.com/magalisolimano/predicting_problem_mortgages/blob/master/notebook.ipynb) or review the [presentation](https://github.com/magalisolimano/time-series/blob/main/presentation_phase4.pdf). For additional information, contact Magali Solimano at magali.solimano@gmail.com.
+See the full analysis in the [Jupyter Notebook](https://github.com/magalisolimano/predicting_problem_mortgages/blob/master/notebook.ipynb) or review the [presentation](https://github.com/magalisolimano/predicting_problem_mortgages/blob/master/presentation.pdf). For additional information, contact Magali Solimano at magali.solimano@gmail.com.
 
 
 ## Repository Structure
 ```
-├── data
 ├── images
+├── .gitignore
 ├── README.md
 ├── notebook.ipynb
 └── presentation_phase4.pdf
