@@ -10,7 +10,7 @@ This analysis applies machine learning to predict the likelihood that a borrower
 
 ## Objectives
 
-The goal is to identify problem loans and the features that determine them in order to manage credit risk. While mortgage loan delinquencies are currently [very low](file:///Users/Magali/flatiron-dsc/projects/predicting_problem_mortgages/HHDC_2022Q3.pdf), there are signs of potential increasing stress as measured by share of loans that are 30-60 days late but not yet considered 90+ days delinquent. The value-added use case for applying machine learning is to strengthen credit risk management in the current environment as well as during stress periods.
+The goal is to identify problem loans and the features that determine them in order to manage credit risk. While mortgage loan delinquencies are currently [very low](https://www.federalreserve.gov/publications/files/202211-supervision-and-regulation-report.pdf), there are signs of potential increasing stress as measured by share of loans that are 30-60 days late but not yet considered 90+ days delinquent. The value-added use case for applying machine learning is to strengthen credit risk management in the current environment as well as during stress periods.
 
 ## The Data
 
