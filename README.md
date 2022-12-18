@@ -44,7 +44,7 @@ Based on results of the best performing model--the Gradient Boosting model--the 
 By location, mortgage loans in the states of Washington, Louisiana, Colorado, and New Jersey, in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states.
 
 By seller, the performance of mortgage loans sold by Rocket Mortgage, Wells Fargo, Home Point Financial, NewRez, and Better Mortgage should be examined more closely for problem loans compared to other identified sellers.
-![classification_by_seller](./images/classification_by_seller_stacked.png)
+![classification_by_seller](./images/loan_share_by_seller.png)
 
 ## Next Steps
 Next steps include continuing to improve model performance, as well as broadening the geographical assessment of problem loans by zipcode and predicting the value of losses for problem loans.
