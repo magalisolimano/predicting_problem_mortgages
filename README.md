@@ -39,6 +39,7 @@ Based on results of the best performing model--the Gradient Boosting model--the 
 - lower borrower credit score of 725 (compared to 766 for performing loans)
 - higher combined loan-to-value ratio of 79% (compared to 67% for performing loans)
 - higher debt-to-income ratios of 38% (compared to 32% for performing loans)
+
 ![classification_by_feature](./images/classification_by_feature.png)
 
 By location, mortgage loans in the states of Washington, Louisiana, Colorado, and New Jersey, in addition to more populated states such as New York and California, should be monitored more closely for problem loans compared to other states.
