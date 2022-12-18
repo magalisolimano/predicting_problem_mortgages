@@ -24,7 +24,7 @@ The analysis utilizes descriptive data analysis and descriptive statistics, in a
 ## Results
 ![cm_auc](./images/cm_auc.png)
 
-After fitting a number of different models, the Gradient Boosting model is selected as the best performing model. It has an f1 score of 85%, indicative of the model's combined precision and recall performance, and ROC_AUC score of 91% for the test set. The model has a true positive rate of 86%, meaning that 86% of predicted problem loans are indeed problematic, and the false positive rate is 20%. The true negative rate is 80%.
+After fitting a number of different models, the Gradient Boosting model is selected as the best performing model. It has an f1 score of 85%, indicative of the model's combined precision and recall performance, and ROC_AUC score of 91% for the test set. The model has a true positive rate of 87%, meaning that 87% of predicted problem loans are indeed problematic, and the false positive rate is 20%. The false negative rate is low at 13%.
 
 The model identifies borrower credit score, combined loan-to-value, debt-to-income,
 unpaid principal balance, and interest rate at origination as the top five most important features determining whether a loan is classified as a problem loan. These findings are not surprising, as these metrics are commonly used in credit risk assessments.
